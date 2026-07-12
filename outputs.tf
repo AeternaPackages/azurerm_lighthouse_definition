@@ -1,4 +1,9 @@
 # --- azurerm_lighthouse_definition ---
+output "lighthouse_definitions_id" {
+  description = "Map of id values across all lighthouse_definitions, keyed the same as var.lighthouse_definitions"
+  value       = module.lighthouse_definitions.lighthouse_definitions_id
+}
+
 output "lighthouse_definitions_authorization" {
   description = "Map of authorization values across all lighthouse_definitions, keyed the same as var.lighthouse_definitions"
   value       = module.lighthouse_definitions.lighthouse_definitions_authorization
@@ -40,6 +45,11 @@ output "lighthouse_definitions_scope" {
 }
 
 # --- azurerm_lighthouse_assignment ---
+output "lighthouse_assignments_id" {
+  description = "Map of id values across all lighthouse_assignments, keyed the same as var.lighthouse_assignments"
+  value       = module.lighthouse_assignments.lighthouse_assignments_id
+}
+
 output "lighthouse_assignments_lighthouse_definition_id" {
   description = "Map of lighthouse_definition_id values across all lighthouse_assignments, keyed the same as var.lighthouse_assignments"
   value       = module.lighthouse_assignments.lighthouse_assignments_lighthouse_definition_id
