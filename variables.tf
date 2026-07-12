@@ -30,19 +30,19 @@ EOT
       principal_id                  = string
       role_definition_id            = string
     }))
-    eligible_authorization = optional(object({
+    eligible_authorization = optional(list(object({
       just_in_time_access_policy = optional(object({
-        approver = optional(object({
+        approver = optional(list(object({
           principal_display_name = optional(string)
           principal_id           = string
-        }))
+        })))
         maximum_activation_duration = optional(string) # Default: "PT8H"
         multi_factor_auth_provider  = optional(string)
       }))
       principal_display_name = optional(string)
       principal_id           = string
       role_definition_id     = string
-    }))
+    })))
     plan = optional(object({
       name      = string
       product   = string
