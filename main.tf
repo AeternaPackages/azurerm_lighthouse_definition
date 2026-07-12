@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.lighthouse_definitions : {
       for k2, v2 in coalesce(v1.lighthouse_assignments, {}) :
       "${k1}/${k2}" => merge(v2, {
-        lighthouse_definition_id = module.lighthouse_definitions.lighthouse_definitions["${k1}"].id
+        lighthouse_definition_id = module.lighthouse_definitions.lighthouse_definitions_id["${k1}"]
       })
     }
   ]...)
