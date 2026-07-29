@@ -12,12 +12,12 @@ locals {
 }
 
 module "lighthouse_definitions" {
-  source                 = "git::https://github.com/AeternaModules/azurerm_lighthouse_definition.git?ref=v4.81.0"
+  source                 = "git::https://github.com/AeternaModules/azurerm_lighthouse_definition.git?ref=v5.0.0"
   lighthouse_definitions = local.lighthouse_definitions
 }
 
 module "lighthouse_assignments" {
-  source                 = "git::https://github.com/AeternaModules/azurerm_lighthouse_assignment.git?ref=v4.81.0"
+  source                 = "git::https://github.com/AeternaModules/azurerm_lighthouse_assignment.git?ref=v5.0.0"
   lighthouse_assignments = local.lighthouse_assignments
   depends_on             = [module.lighthouse_definitions]
 }
